@@ -343,7 +343,6 @@ function App() {
                     type="checkbox"
                     id="attending"
                     checked={guest.attending}
-                    // has to be (guest)
                     onChange={(event) =>
                       handleAttending(guest.id, event.currentTarget.checked)
                     }
