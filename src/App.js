@@ -124,6 +124,10 @@ const guestListContainer = css`
   display: flex;
   justify-content: center;
 
+  input {
+    margin-left: 25px;
+  }
+
   button {
     width: 50px;
     height: 30px;
@@ -136,7 +140,7 @@ const guestListContainer = css`
     z-index: 0;
     border-radius: 10px;
     text-transform: uppercase;
-    margin-left: 15px;
+    margin-left: 25px;
 
     :before {
       content: '';
@@ -339,22 +343,27 @@ function App() {
               return (
                 <li key={guest.id}>
                   {guest.firstName} {guest.lastName}{' '}
-                  <input
-                    type="checkbox"
-                    id="attending"
-                    checked={guest.attending}
-                    onChange={(event) =>
-                      handleAttending(guest.id, event.currentTarget.checked)
-                    }
-                  />
-                  <label htmlFor="attending">Attending</label>
-                  <button
-                    onClick={() => {
-                      deleteGuest(guest);
-                    }}
-                  >
-                    X
-                  </button>
+                  <span>
+                    <input
+                      type="checkbox"
+                      id="attending"
+                      checked={guest.attending}
+                      onChange={(event) =>
+                        handleAttending(guest.id, event.currentTarget.checked)
+                      }
+                    />
+                  </span>
+                  <span>
+                    {' '}
+                    <label htmlFor="attending">Attending</label>
+                    <button
+                      onClick={() => {
+                        deleteGuest(guest);
+                      }}
+                    >
+                      X
+                    </button>
+                  </span>
                 </li>
               );
             })}
