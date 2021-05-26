@@ -1,7 +1,6 @@
 import './App.css';
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-// import { stat } from 'fs';
 import { useEffect, useState } from 'react';
 
 const baseUrl = 'https://rest-guest-list-api.herokuapp.com';
